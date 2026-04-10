@@ -8,10 +8,24 @@ require('dotenv').config();
 // intialize express and middlewares
 const app = express()
 app.use(express.json());
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173", // for local dev
+  "https://free-electrical-learnings.onrender.com" // for production
+];
+
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
+
 app.use(cookieParser());
 
 
