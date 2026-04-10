@@ -8,7 +8,7 @@ require('dotenv').config();
 // intialize express and middlewares
 const app = express()
 app.use(express.json());
-const cors = require("cors");
+
 
 const allowedOrigins = [
   "http://localhost:5173", // for local dev
