@@ -44,7 +44,7 @@ function AdminRegister() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/v1/user/admin-register",
+        "https://free-electrical-learning-backend.onrender.com/api/auth/v1/user/admin-register",
         formData
       );
 
