@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import bgImage from "../src/assets/hero.jpg"; // adjust path to your image
+import bgImage from "../src/assets/hero.jpg"; 
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -41,9 +41,14 @@ function RegistrationForm() {
       newErrors.email = "Valid email is required.";
     if (!formData.department.trim())
       newErrors.department = "Department is required.";
-    if (!/^\+234\d{10}$/.test(formData.phonenumber))
+// Define the regex for Nigerian numbers
+    const nigerianPhoneRegex = /^(?:070|080|081|090|091)\d{8}$/;
+
+    if (!nigerianPhoneRegex.test(formData.phonenumber)) {
       newErrors.phonenumber =
-        "Phone number must start with +234 and have 10 digits after.";
+        "Phone number must be 11 digits and start with 070, 080, 081, 090, or 091.";
+    }
+
     if (!formData.matricnumber.trim())
       newErrors.matricnumber = "Matric number is required.";
     if (!formData.level) newErrors.level = "Please select your level.";
