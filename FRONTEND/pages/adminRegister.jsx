@@ -112,7 +112,7 @@ function AdminRegister() {
           </div>
           <div>
             <input
-              type="text"
+              type="password"
               name="secret"
               placeholder="Enter Admin secret"
               value={formData.secret}
