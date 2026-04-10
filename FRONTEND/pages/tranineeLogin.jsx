@@ -155,7 +155,7 @@ function RegistrationForm() {
           <input
             type="tel"
             name="phonenumber"
-            placeholder="+234XXXXXXXXXX"
+            placeholder="080XXXXXXXXXX"
             value={formData.phonenumber}
             onChange={handleChange}
             className="w-full p-3 border rounded-md focus:ring-2 focus:ring-indigo-500"
@@ -165,7 +165,7 @@ function RegistrationForm() {
           <input
             type="text"
             name="matricnumber"
-            placeholder="Enter Matric Number"
+            placeholder="mat numb: FUO/**/***/*****"
             value={formData.matricnumber}
             onChange={handleChange}
             className="w-full p-3 border rounded-md focus:ring-2 focus:ring-indigo-500"
