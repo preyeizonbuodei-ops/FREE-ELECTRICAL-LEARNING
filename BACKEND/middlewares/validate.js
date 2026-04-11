@@ -4,8 +4,8 @@ exports.validateUserRegister = joi.object({
 
     username: joi.string()
         .required()
-        .min(4)
-        .max(40),
+        .min(4),
+        
 
 
     email: joi.string()
